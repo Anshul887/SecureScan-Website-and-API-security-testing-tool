@@ -6,7 +6,12 @@ from "./routes/auth.routes";
 
 import userRoutes
 from "./routes/user.routes";
+import helmet from "helmet";
+import morgan from "morgan";
 
+app.use(helmet());
+
+app.use(morgan("dev"));
 const app = express();
 
 app.use(cors());
