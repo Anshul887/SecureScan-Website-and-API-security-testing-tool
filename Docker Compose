@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16
+    restart: always
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: securescan
+
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+
+    ports:
+      - "6379:6379"
